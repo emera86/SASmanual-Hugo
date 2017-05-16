@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Missing Data - Learning SAS</title>
+    <meta name="generator" content="Hugo 0.20.6" />
+
+    
+    <link rel="canonical" href="/missing_data/">
+    
+
+    <meta property="og:url" content="/missing_data/">
+    <meta property="og:title" content="Learning SAS">
+    <meta property="og:image" content="/images/sas-logo.png">
+    <meta name="apple-mobile-web-app-title" content="Learning SAS">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/temporary.css">
+    <link rel="stylesheet" href="/stylesheets/palettes.css">
+    <link rel="stylesheet" href="/stylesheets/highlight/highlight.css">
+    <link rel="stylesheet" href="/stylesheets/highlight/prism-sas.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-indigo palette-accent-light-blue">
+
+
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Missing Data
+      </div>
+    </div>
+
+    
+
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="/images/sas-logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Learning SAS </strong>
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SAS Programming Essentials" href="/essential/">
+	
+	SAS Programming Essentials
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Statistics" href="/statistics/">
+	
+	Statistics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Missing Data" href="/missing_data/">
+	
+	Missing Data
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Using Macros" href="/macros/">
+	
+	Using Macros
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Miscellanea" href="/miscellanea/">
+	
+	Miscellanea
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Missing Data </h1>
+
+			
+
+<p>Depending on the <strong>type of data and model</strong> you will be using, techniques such as <strong>multiple imputation</strong> or <strong>direct maximum likelihood</strong> may better serve your needs. The main goals of statistical analysis with missing data are:</p>
+
+<ul>
+<li>Minimize bias</li>
+<li>Maximize use of available information</li>
+<li>Obtain appropriate estimates of uncertainty</li>
+</ul>
+
+<p>To use the more appropriate imputation method you should consider the missing data mechanism of your data which describes the process that is believed to have generated the missing values:</p>
+
+<ul>
+<li><strong>Missing completely at random (MCAR)</strong>:  neither the variables in the dataset nor the unobserved value of the variable itself predict whether a value will be missing</li>
+<li><strong>Missing at random (MAR)</strong>: other variables (but not the variable itself) in the dataset can be used to predict missingness on a given variable</li>
+<li><strong>Missing not at random (MNAR)</strong>: value of the unobserved variable itself predicts missingness</li>
+</ul>
+
+<p>Imputed values are <strong>not</strong> equivalent to observed values and serve only to help estimate the covariances between variables needed for inference.</p>
+
+<p>Some of the imputation techniques are:</p>
+
+<ul>
+<li><strong>Complete case analysis (listwise deletion)</strong>:  deleting cases in a particular dataset that are missing data on any variable of interest (for MCAR cases the power is reduced but it does not add any bias)</li>
+<li><strong>Available case analysis (pairwise deletion)</strong>:  deleting cases where a variable required for a particular analysis is missing, but including those cases in analyses for which all required variables are present</li>
+<li><strong>Mean Imputation</strong>:</li>
+<li><strong>Single Imputation</strong>:</li>
+<li><strong>Stochastic Imputation</strong>:</li>
+</ul>
+
+<h2 id="direct-maximum-likelihood">Direct maximum likelihood</h2>
+
+<h2 id="multiple-imputation">Multiple imputation</h2>
+
+<p>Visit <a href="http://lnr.li/YdyXo">this website</a> for more information.</p>
+
+<p>Multiple Imputation is always superior to any of the single imputation methods because:</p>
+
+<ul>
+<li>A single imputed value is never used</li>
+<li>The variance estimates reflect the appropriate amount of uncertainty surrounding parameter estimates</li>
+</ul>
+
+<p>There are several decisions to be made before performing a multiple imputation including <strong>distribution</strong>, <strong>auxiliary variables</strong> and <strong>number of imputations</strong> that can affect the quality of the imputation.</p>
+
+<ol>
+<li><strong>Imputation phase (PROC MI)</strong>:  the user specifies the imputation model to be used and the number
+   of imputed datasets to be created</li>
+<li><strong>Analysis phase (PROG GLM/PROC GENMOD)</strong>: runs the analytic model of interest within each of the imputed datasets</li>
+<li><strong>Pooling phase (PROC MIANALYZE)</strong>: combines all the estimates across all the imputed datasets and outputs one set of parameter estimates for the model of interest</li>
+</ol>
+
+<p><strong><em>MVN or FCS?</em></strong></p>
+
+<p><strong><em>Auxiliary variables</em></strong></p>
+
+<ul>
+<li>They can can help improve the likelihood of meeting the MAR assumption</li>
+<li>They help yield more accurate and stable estimates and thus reduce the estimated standard errors in analytic models</li>
+<li>Including them can also help to increase power</li>
+</ul>
+
+<p><strong><em>Number of imputations (m)</em></strong></p>
+
+<ul>
+<li>Estimates of coefficients stabilize at much lower values of <em>m</em> than estimates of variances and covariances of error terms</li>
+<li>A larger number of imputations may also allow hypothesis tests with less restrictive assumptions (i.e., that do not assume equal fractions of missing information for all coefficients)</li>
+<li>Multiple runs of m imputations are recommended to assess the stability of the parameter estimates</li>
+<li>Recommendations:
+
+<ul>
+<li>For low fractions of missing information (and relatively simple analysis techniques) 5-20 imputations and 50 or more when the proportion of missing data is relatively high</li>
+<li>The number of imputations should equal the percentage of incomplete cases (<em>m</em>=max(FMI%)), this way the error associated with estimating the regression coefficients, standard errors and the resulting p-values is considerably reduced and results in an adequate level of reproducibility</li>
+</ul></li>
+</ul>
+
+<p><strong>More comments</strong></p>
+
+<ul>
+<li>You should include the dependent variable (DV) in the imputation model unless you would like to impute independent variables (IVs) assuming they are uncorrelated with your DV</li>
+<li>Although MI can perform well up to 50% missing observations,  the larger the amount the higher the chance of finding estimation problems during the imputation process and the lower the chance of meeting the MAR assumption</li>
+</ul>
+
+
+			
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="/statistics/" title="Statistics: Introduction to ANOVA, Regression and Logistic Regression">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Statistics: Introduction to ANOVA, Regression and Logistic Regression
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="/macros/" title="Using Macros">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Using Macros
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '';
+      var repo_id  = '';
+    
+    </script>
+
+    <script src="/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    
+    <script src="/javascripts/prisma-sas.js"></script>
+  </body>
+</html>
+

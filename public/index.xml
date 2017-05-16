@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning SAS</title>
+    <link>/</link>
+    <description>Recent content on Learning SAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Apr 2017 22:23:25 +0200</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SAS Programming Essentials</title>
+      <link>/essential/</link>
+      <pubDate>Mon, 03 Apr 2017 22:23:25 +0200</pubDate>
+      
+      <guid>/essential/</guid>
+      <description>Getting Started with SAS Programming Chapter summary in SAS
+Working with SAS Programs Chapter summary in SAS
+Comments
+/* comment */ * comment statement;  Accessing Data Chapter summary in SAS
+Accessing SAS libraries  libref: library reference name (shortcut to the physical location). There are three rules for valid librefs: A length of one to eight characters Begin with a letter or underscore The remaining characters are letters, numbers, or underscores Valid variable names begin with a letter or underscore, and continue with letters, numbers, or underscores.</description>
+    </item>
+    
+    <item>
+      <title>Statistics: Introduction to ANOVA, Regression and Logistic Regression</title>
+      <link>/statistics/</link>
+      <pubDate>Tue, 03 Jan 2017 22:23:25 +0200</pubDate>
+      
+      <guid>/statistics/</guid>
+      <description>Introduction to Statistics Chapter summary in SAS
+Basic Statistical Concepts  Descriptive statistics (exploratory data analysis, EDA)  Explore your data  Inferential statistics (explanatory modelling)  How is X related to Y? Sample sizes are typically small and include few variables The focus is on the parameters of the model To assess the model, you use p-values and confidence intervals  Predictive modelling  If you know X, can you predict Y?</description>
+    </item>
+    
+    <item>
+      <title>Missing Data</title>
+      <link>/missing_data/</link>
+      <pubDate>Fri, 03 Feb 2017 22:23:25 +0200</pubDate>
+      
+      <guid>/missing_data/</guid>
+      <description>Depending on the type of data and model you will be using, techniques such as multiple imputation or direct maximum likelihood may better serve your needs. The main goals of statistical analysis with missing data are:
+ Minimize bias Maximize use of available information Obtain appropriate estimates of uncertainty  To use the more appropriate imputation method you should consider the missing data mechanism of your data which describes the process that is believed to have generated the missing values:</description>
+    </item>
+    
+    <item>
+      <title>Using Macros</title>
+      <link>/macros/</link>
+      <pubDate>Wed, 03 May 2017 22:23:25 +0200</pubDate>
+      
+      <guid>/macros/</guid>
+      <description>You can learn about macros in the SAS Macro Language 1: Essentials course.
+###Macro Program for Creating Box Plots for All of Predictor Variables
+%let categorical=House_Style2 Overall_Qual2 Overall_Cond2 Fireplaces Season_Sold Garage_Type_2 Foundation_2 Heating_QC Masonry_Veneer Lot_Shape_2 Central_Air; /* Macro Usage: %box(DSN = , Response = , CharVar = ) */ %macro box(dsn = , response = , Charvar = ); %let i = 1 ; %do %while(%scan(&amp;amp;charvar,&amp;amp;i,%str( )) ^= %str()) ; %let var = %scan(&amp;amp;charvar,&amp;amp;i,%str( )); proc sgplot data=&amp;amp;dsn; vbox &amp;amp;response / category=&amp;amp;var grouporder=ascending connect=mean; title &amp;quot;&amp;amp;response across Levels of &amp;amp;var&amp;quot;; run; %let i = %eval(&amp;amp;i + 1 ) ; %end ; %mend box; %box(dsn = statdata.</description>
+    </item>
+    
+    <item>
+      <title>Miscellanea</title>
+      <link>/miscellanea/</link>
+      <pubDate>Fri, 03 Mar 2017 22:23:25 +0200</pubDate>
+      
+      <guid>/miscellanea/</guid>
+      <description>When you name a process flow Autoexec, SAS Enterprise Guide prompts you to run the process flow when you open the project. This makes it easy to recreate your data when you start practising in the course.
+For the SAS Enterprise Guide you need to add this command to get the plots displayed in the output:
+ODS GRAPHICS ON; [your code here] ODS GRAPHICS OFF;  When you add the ODS TRACE statement, SAS writes a trace record to the log that includes information about each output object (name, label, template, path):</description>
+    </item>
+    
+    <item>
+      <title>Welcome to SAS Programming</title>
+      <link>/</link>
+      <pubDate>Tue, 08 Mar 2016 21:07:13 +0100</pubDate>
+      
+      <guid>/</guid>
+      <description>Gettin&amp;rsquo; started!! This is a SAS manual for beginners.</description>
+    </item>
+    
+  </channel>
+</rss>

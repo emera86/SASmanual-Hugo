@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscellaneas on Learning SAS</title>
+    <link>/miscellanea/</link>
+    <description>Recent content in Miscellaneas on Learning SAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Mar 2017 22:23:25 +0200</lastBuildDate>
+    
+	<atom:link href="/miscellanea/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Miscellanea</title>
+      <link>/miscellanea/</link>
+      <pubDate>Fri, 03 Mar 2017 22:23:25 +0200</pubDate>
+      
+      <guid>/miscellanea/</guid>
+      <description>When you name a process flow Autoexec, SAS Enterprise Guide prompts you to run the process flow when you open the project. This makes it easy to recreate your data when you start practising in the course.
+For the SAS Enterprise Guide you need to add this command to get the plots displayed in the output:
+ODS GRAPHICS ON; [your code here] ODS GRAPHICS OFF;  When you add the ODS TRACE statement, SAS writes a trace record to the log that includes information about each output object (name, label, template, path):</description>
+    </item>
+    
+  </channel>
+</rss>

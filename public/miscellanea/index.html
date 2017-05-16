@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Miscellanea - Learning SAS</title>
+    <meta name="generator" content="Hugo 0.20.6" />
+
+    
+    <link rel="canonical" href="/miscellanea/">
+    
+
+    <meta property="og:url" content="/miscellanea/">
+    <meta property="og:title" content="Learning SAS">
+    <meta property="og:image" content="/images/sas-logo.png">
+    <meta name="apple-mobile-web-app-title" content="Learning SAS">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/temporary.css">
+    <link rel="stylesheet" href="/stylesheets/palettes.css">
+    <link rel="stylesheet" href="/stylesheets/highlight/highlight.css">
+    <link rel="stylesheet" href="/stylesheets/highlight/prism-sas.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-indigo palette-accent-light-blue">
+
+
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Miscellanea
+      </div>
+    </div>
+
+    
+
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="/images/sas-logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Learning SAS </strong>
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SAS Programming Essentials" href="/essential/">
+	
+	SAS Programming Essentials
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Statistics" href="/statistics/">
+	
+	Statistics
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Missing Data" href="/missing_data/">
+	
+	Missing Data
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Using Macros" href="/macros/">
+	
+	Using Macros
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Miscellanea" href="/miscellanea/">
+	
+	Miscellanea
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Miscellanea </h1>
+
+			<p>When you name a process flow Autoexec, SAS Enterprise Guide prompts you to run the process flow when you open the project. This makes it easy to recreate your data when you start practising in the course.</p>
+
+<p>For the SAS Enterprise Guide you need to add this command to get the plots displayed in the output:</p>
+
+<pre><code>ODS GRAPHICS ON;
+[your code here]
+ODS GRAPHICS OFF;
+</code></pre>
+
+<p>When you add the <strong>ODS TRACE</strong> statement, SAS writes a trace record to the log that includes information about each output object (name, label, template, path):</p>
+
+<pre><code>ODS TRACE ON;
+[your code here]
+ODS TRACE OFF;
+</code></pre>
+
+<p>You produce a list of the possible output elements in the log that you may specify in the <strong>ODS SELECT/EXCLUDE</strong> statement:</p>
+
+<pre><code>ODS SELECT lmeans diff meanplot diffplot controlplot;
+[your code here]
+</code></pre>
+
+<p>This way you can see the actual variable level values in the output rather than some indexes:</p>
+
+<pre><code>FORMAT variable DOSEF.;
+</code></pre>
+
+<ul>
+<li>Create different data sets from one:</li>
+</ul>
+
+<pre><code>DATA data1 data2 data3;
+    SET original_data;
+    IF (condition1) THEN OUTPUT prueba1;
+    IF (condition2) THEN OUTPUT prueba2;
+    IF (condition3) THEN OUTPUT prueba3;
+RUN;
+</code></pre>
+
+<ul>
+<li>Copy database <strong>test</strong> into <strong>work</strong>:</li>
+</ul>
+
+<pre><code>proc copy in=test out=work;
+run;
+</code></pre>
+
+<ul>
+<li>Remove data sets:</li>
+</ul>
+
+<pre><code>PROC DELETE DATA=data1 data2 data3;
+RUN;
+</code></pre>
+
+<ul>
+<li>Declaring <strong>arrays</strong>:</li>
+</ul>
+
+<p>The dimension has to be known in advance (???)
+There&rsquo;s no way to write an implicit loop through all the elements of the array (???)</p>
+
+<pre><code>data _null_;
+
+    ARRAY arrayname[2,3] &lt;$&gt; v11-3 (0 0 0)
+                         &lt;$&gt; v21-3 (0 0 0);
+                             
+    DO i=1 TO DIM(arrayname);
+        arrayname[i] = arrayname[i] + 1;
+    END;
+
+    result=CATX(',',OF v11-3);
+    PUT result=;
+
+RUN;
+</code></pre>
+
+<ul>
+<li>IF THEN analogue to &ldquo;CONTAINS&rdquo;:</li>
+</ul>
+
+<pre><code>if find(variable_name,'pattern') then
+</code></pre>
+
+<ul>
+<li>Site calculation from the two first numbers of the patient number:</li>
+</ul>
+
+<pre><code>site = SUBSTR(PUT(patient,z4.),1,2);
+</code></pre>
+
+<ul>
+<li><strong>PUT</strong>: turns the numeric variable <em>patient</em> into a string (<strong>z4.</strong> adds leading zeroes if needed)</li>
+
+<li><p><strong>SUBSTR</strong>: takes the first <strong>2</strong> characters starting from position <strong>1</strong></p></li>
+
+<li><p><a href="http://support.sas.com/kb/36/898.html">Count the distinct values of a variable</a></p></li>
+
+<li><p>Remove element/string from macro variable</p></li>
+</ul>
+
+<pre><code>%put &amp;=list;     /* Check list contents before */
+
+%let removefromlist = string_to_remove;
+%let list = %sysfunc(tranwrd(&amp;list., &amp;removefromlist., %str()));;
+
+%put &amp;=list;     /* Check list contents after */
+</code></pre>
+
+<ul>
+<li>How to uppercase the first letter of words:</li>
+</ul>
+
+<pre><code>var_propercase = PROPCASE(var_uppercase);
+</code></pre>
+
+<ul>
+<li><a href="http://support.sas.com/kb/23/350.html">How to replace the variable&rsquo;s name with the variable&rsquo;s label in PROC FREQ output</a></li>
+</ul>
+
+<pre><code>options validvarname=any;
+PROC FREQ DATA=SAS-data-set (RENAME=(variable1=&quot;Label variable 1&quot;n variable1=&quot;Label variable 1&quot;n));
+    TABLES &quot;Label variable 1&quot;n;
+RUN;
+</code></pre>
+
+<ul>
+<li><a href="https://support.sas.com/rnd/base/ods/scratch/styles-tips.pdf">PROC TEMPLATE style tips</a></li>
+<li><a href="http://www.sascommunity.org/wiki/Tips:Use_IS_MISSING_and_IS_NULL_with_Numeric_or_Character_Variables">WHERE variable IS MISSING</a></li>
+</ul>
+
+
+			
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="/macros/" title="Using Macros">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Using Macros
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="/" title="Welcome to SAS Programming">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Welcome to SAS Programming
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '';
+      var repo_id  = '';
+    
+    </script>
+
+    <script src="/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    
+    <script src="/javascripts/prisma-sas.js"></script>
+  </body>
+</html>
+

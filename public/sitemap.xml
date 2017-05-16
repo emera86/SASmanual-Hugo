@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/essential/</loc>
+    <lastmod>2017-04-03T22:23:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/statistics/</loc>
+    <lastmod>2017-01-03T22:23:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/missing_data/</loc>
+    <lastmod>2017-02-03T22:23:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/macros/</loc>
+    <lastmod>2017-05-03T22:23:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/miscellanea/</loc>
+    <lastmod>2017-03-03T22:23:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2016-03-08T21:07:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/essential/</loc>
+    <lastmod>2017-04-03T22:23:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-04-03T22:23:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/macros/</loc>
+    <lastmod>2017-05-03T22:23:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/miscellanea/</loc>
+    <lastmod>2017-03-03T22:23:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/missing_data/</loc>
+    <lastmod>2017-02-03T22:23:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/statistics/</loc>
+    <lastmod>2017-01-03T22:23:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
