@@ -28,7 +28,7 @@ canonifyurls = true
 	custom_js  = []
 
 	# Syntax highlighting theme
-	 highlight_css  = "stylesheets/prisma-sas.css"
+	# highlight_css  = "stylesheets/prisma-sas.css"
 	# highlight_js  = "javascripts/prisma-sas.js"
 
 	[params.palette]
